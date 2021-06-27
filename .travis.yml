@@ -9,3 +9,18 @@ before_install:
 
 script:
   - docker run -e CI=true mavparadeza/dockerreact npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  name: "dockerreact"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-905113843346"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
+
+
+  http://dockerreact-env.eba-xcfwgwpc.us-east-1.elasticbeanstalk.com/
