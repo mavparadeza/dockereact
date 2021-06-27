@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          What's up?
+          Initiated from feature br.
         </p>
         <a
           className="App-link"
