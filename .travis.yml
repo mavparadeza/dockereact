@@ -1,6 +1,11 @@
-sudoe: required
+language: generic
+sudo: required
+
 services:
   - docker
 
 before_install:
   - docker build  -t mavparadeza/dockerreact -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true mavparadeza/dockerreact npm run test
